@@ -14,6 +14,7 @@
 		FD9595561C11668000E27BB8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD9595551C11668000E27BB8 /* Images.xcassets */; };
 		FD9595591C11668000E27BB8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD9595571C11668000E27BB8 /* LaunchScreen.xib */; };
 		FD9595651C11668000E27BB8 /* FirstGitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9595641C11668000E27BB8 /* FirstGitTests.m */; };
+		FD9595771C116B5A00E27BB8 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9595741C116AF300E27BB8 /* Masonry.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +24,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = FD9595441C11668000E27BB8;
 			remoteInfo = FirstGit;
+		};
+		FD9595731C116AF300E27BB8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD95956E1C116AF300E27BB8 /* Masonry.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3AED05B71AD59FD40053CC65;
+			remoteInfo = "Masonry iOS";
+		};
+		FD9595751C116AF300E27BB8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD95956E1C116AF300E27BB8 /* Masonry.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3AED06271AD5A1400053CC65;
+			remoteInfo = "Masonry OSX";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -40,6 +55,7 @@
 		FD95955E1C11668000E27BB8 /* FirstGitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstGitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD9595631C11668000E27BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD9595641C11668000E27BB8 /* FirstGitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstGitTests.m; sourceTree = "<group>"; };
+		FD95956E1C116AF300E27BB8 /* Masonry.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Masonry.xcodeproj; path = "../../../../../Downloads/Masonry-master/Masonry.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD9595771C116B5A00E27BB8 /* Masonry.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +80,7 @@
 		FD95953C1C11668000E27BB8 = {
 			isa = PBXGroup;
 			children = (
+				FD95956E1C116AF300E27BB8 /* Masonry.xcodeproj */,
 				FD9595471C11668000E27BB8 /* FirstGit */,
 				FD9595611C11668000E27BB8 /* FirstGitTests */,
 				FD9595461C11668000E27BB8 /* Products */,
@@ -117,6 +135,15 @@
 				FD9595631C11668000E27BB8 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD95956F1C116AF300E27BB8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD9595741C116AF300E27BB8 /* Masonry.framework */,
+				FD9595761C116AF300E27BB8 /* Masonry.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +213,12 @@
 			mainGroup = FD95953C1C11668000E27BB8;
 			productRefGroup = FD9595461C11668000E27BB8 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FD95956F1C116AF300E27BB8 /* Products */;
+					ProjectRef = FD95956E1C116AF300E27BB8 /* Masonry.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FD9595441C11668000E27BB8 /* FirstGit */,
@@ -193,6 +226,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FD9595741C116AF300E27BB8 /* Masonry.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Masonry.framework;
+			remoteRef = FD9595731C116AF300E27BB8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FD9595761C116AF300E27BB8 /* Masonry.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Masonry.framework;
+			remoteRef = FD9595751C116AF300E27BB8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FD9595431C11668000E27BB8 /* Resources */ = {
@@ -350,6 +400,7 @@
 				INFOPLIST_FILE = FirstGit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/Users/yangweibing/Downloads/Masonry-master/Masonry";
 			};
 			name = Debug;
 		};
@@ -360,6 +411,7 @@
 				INFOPLIST_FILE = FirstGit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/Users/yangweibing/Downloads/Masonry-master/Masonry";
 			};
 			name = Release;
 		};
@@ -416,6 +468,7 @@
 				FD95956A1C11668000E27BB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FD95956B1C11668000E27BB8 /* Build configuration list for PBXNativeTarget "FirstGitTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +477,7 @@
 				FD95956D1C11668000E27BB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
