@@ -15,7 +15,7 @@
 #import "Masonry.h"
 
 //5.为避免Block的循环引用，定义以下宏简化对当前控制器的引用
-#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self
 
 @interface ViewController ()
 
@@ -25,12 +25,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // 防止block中的循环引用
     WS(ws);
-//    // 初始化view并设置背景
     UIView *view = [UIView new];
     view.backgroundColor = [UIColor redColor];
     [self.view addSubview:view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(ws.view).multipliedBy(0.3);
+        make.center.equalTo(ws.view);
+    }];
+
 //    view.translatesAutoresizingMaskIntoConstraints=NO;
 //    NSLayoutConstraint* consWidth=[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:0.3 constant:0];
 //    NSLayoutConstraint* consHeight=[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:0.1 constant:0];
@@ -39,13 +42,14 @@
 //    NSArray* consArr=@[consWidth,consX,consY,consHeight];
 //    [self.view addConstraints:consArr];
     
+    UILabel* lbl=[UILabel new];
+    lbl.backgroundColor=[UIColor blueColor];
+    [self.view addSubview:lbl];
+    [lbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(80, 80));
+        make.right.and.bottom.mas_equalTo(-10);
+    }];
     
-    // 使用mas_makeConstraints添加约束
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        // 添加大小约束（make就是要添加约束的控件view）
-        make.size.mas_equalTo(CGSizeMake(100, 100));
-        // 添加居中约束（居中方式与self相同）
-        make.center.equalTo(ws.view); }];
 }
 
 - (void)didReceiveMemoryWarning {
